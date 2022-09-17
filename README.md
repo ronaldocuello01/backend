@@ -21,5 +21,6 @@ Esto con el fin de crear el usuario que empezará a llenar de datos al sistema (
 - [Node JS]
 - [Express]
 - [TypeScript]
+- [JavaScript]
 - [TypeORM]
 - [PostgreSQL]
