@@ -24,7 +24,7 @@ class restaurantController {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const restaurants = yield Restaurant_1.Restaurant.find({
-                    relations: { files: true, views: true },
+                    relations: { specialities: true, files: true, views: true, dishes: true },
                 });
                 res.json(restaurants);
             }
@@ -43,7 +43,7 @@ class restaurantController {
                 if (req.params.id) {
                     const id = parseInt(req.params.id);
                     const restaurants = yield Restaurant_1.Restaurant.find({
-                        relations: { specialities: true, files: true, views: true },
+                        relations: { specialities: true, files: true, views: true, dishes: true },
                         where: {
                             id: id
                         }
@@ -103,7 +103,7 @@ class restaurantController {
             try {
                 const { name, location, id_specialities, files_data } = req.body;
                 const specialities = yield Speciality_1.Speciality.findBy({
-                    id: (0, typeorm_1.In)(id_specialities)
+                    id: typeorm_1.In(id_specialities)
                 });
                 const files = yield filesRepo.save(files_data);
                 if (name && location) {
@@ -145,7 +145,7 @@ class restaurantController {
                         const view = new View_1.View();
                         restaurant.views = [view];
                         yield view.save();
-                        yield restaurant.save();
+                        // await restaurant.save();
                     }
                     else {
                         res.json({

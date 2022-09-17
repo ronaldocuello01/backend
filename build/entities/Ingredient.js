@@ -15,34 +15,34 @@ const Dish_1 = require("./Dish");
 let Ingredient = class Ingredient extends typeorm_1.BaseEntity {
 };
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
 ], Ingredient.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Ingredient.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Ingredient.prototype, "description", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ default: 'A' }),
+    typeorm_1.Column({ default: 'A' }),
     __metadata("design:type", String)
 ], Ingredient.prototype, "status", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)(),
+    typeorm_1.CreateDateColumn(),
     __metadata("design:type", Date)
 ], Ingredient.prototype, "createdAt", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)(),
+    typeorm_1.UpdateDateColumn(),
     __metadata("design:type", Date)
 ], Ingredient.prototype, "updatedAt", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => Dish_1.Dish, (dish) => dish.ingredients),
+    typeorm_1.ManyToOne(() => Dish_1.Dish, (dish) => dish.ingredients),
     __metadata("design:type", Dish_1.Dish)
 ], Ingredient.prototype, "dish", void 0);
 Ingredient = __decorate([
-    (0, typeorm_1.Entity)()
+    typeorm_1.Entity()
 ], Ingredient);
 exports.Ingredient = Ingredient;

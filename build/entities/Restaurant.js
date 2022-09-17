@@ -18,48 +18,48 @@ const Speciality_1 = require("./Speciality");
 let Restaurant = class Restaurant extends typeorm_1.BaseEntity {
 };
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
 ], Restaurant.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Restaurant.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Restaurant.prototype, "location", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ default: 'A' }),
+    typeorm_1.Column({ default: 'A' }),
     __metadata("design:type", String)
 ], Restaurant.prototype, "status", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)(),
+    typeorm_1.CreateDateColumn(),
     __metadata("design:type", Date)
 ], Restaurant.prototype, "createdAt", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)(),
+    typeorm_1.UpdateDateColumn(),
     __metadata("design:type", Date)
 ], Restaurant.prototype, "updatedAt", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => Dish_1.Dish, (dish) => dish.restaurant),
+    typeorm_1.OneToMany(() => Dish_1.Dish, (dish) => dish.restaurant),
     __metadata("design:type", Array)
 ], Restaurant.prototype, "dishes", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => View_1.View, (view) => view.restaurant),
+    typeorm_1.OneToMany(() => View_1.View, (view) => view.restaurant),
     __metadata("design:type", Array)
 ], Restaurant.prototype, "views", void 0);
 __decorate([
-    (0, typeorm_1.ManyToMany)(() => Speciality_1.Speciality),
-    (0, typeorm_1.JoinTable)(),
+    typeorm_1.ManyToMany(() => Speciality_1.Speciality),
+    typeorm_1.JoinTable(),
     __metadata("design:type", Array)
 ], Restaurant.prototype, "specialities", void 0);
 __decorate([
-    (0, typeorm_1.ManyToMany)(() => File_1.File),
-    (0, typeorm_1.JoinTable)(),
+    typeorm_1.ManyToMany(() => File_1.File),
+    typeorm_1.JoinTable(),
     __metadata("design:type", Array)
 ], Restaurant.prototype, "files", void 0);
 Restaurant = __decorate([
-    (0, typeorm_1.Entity)()
+    typeorm_1.Entity()
 ], Restaurant);
 exports.Restaurant = Restaurant;

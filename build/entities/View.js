@@ -15,22 +15,22 @@ const Restaurant_1 = require("./Restaurant");
 let View = class View extends typeorm_1.BaseEntity {
 };
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
 ], View.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)(),
+    typeorm_1.CreateDateColumn(),
     __metadata("design:type", Date)
 ], View.prototype, "createdAt", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)(),
+    typeorm_1.UpdateDateColumn(),
     __metadata("design:type", Date)
 ], View.prototype, "updatedAt", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => Restaurant_1.Restaurant, (restaurant) => restaurant.views),
+    typeorm_1.ManyToOne(() => Restaurant_1.Restaurant, (restaurant) => restaurant.views),
     __metadata("design:type", Restaurant_1.Restaurant)
 ], View.prototype, "restaurant", void 0);
 View = __decorate([
-    (0, typeorm_1.Entity)()
+    typeorm_1.Entity()
 ], View);
 exports.View = View;

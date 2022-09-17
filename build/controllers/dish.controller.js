@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const jwt = require('jsonwebtoken');
+const typeorm_1 = require("typeorm");
 const db_1 = require("../db");
 const Dish_1 = require("../entities/Dish");
 const File_1 = require("../entities/File");
@@ -182,6 +183,33 @@ class dishController {
                 res.json({
                     status: 403,
                     msg: 'datos incompletos'
+                });
+            }
+        });
+    }
+    // filter
+    filter(req, res) {
+        var _a, _b, _c;
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const { id_speciality, id_type, txt } = req.body;
+                console.log(req.body);
+                const dishes = yield Dish_1.Dish.find({
+                    relations: { restaurant: true, speciality: true, dishType: true, files: true },
+                    where: [
+                        Object.assign(Object.assign(Object.assign({}, (((_a = req.body) === null || _a === void 0 ? void 0 : _a.id_speciality) && { speciality: { id: id_speciality } })), (((_b = req.body) === null || _b === void 0 ? void 0 : _b.id_type) && { dishType: { id: id_type } })), (((_c = req.body) === null || _c === void 0 ? void 0 : _c.txt) && { name: typeorm_1.Like("%" + txt + "%") })
+                        // dishType: { id: id_type },
+                        // speciality: { id: id_speciality },
+                        // name: Like("%" + txt + "%")
+                        )
+                    ]
+                });
+                res.json(dishes);
+            }
+            catch (error) {
+                res.json({
+                    status: 500,
+                    msg: error
                 });
             }
         });

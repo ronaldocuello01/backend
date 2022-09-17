@@ -14,30 +14,30 @@ const typeorm_1 = require("typeorm");
 let File = class File extends typeorm_1.BaseEntity {
 };
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
 ], File.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], File.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], File.prototype, "path", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ default: 'A' }),
+    typeorm_1.Column({ default: 'A' }),
     __metadata("design:type", String)
 ], File.prototype, "status", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)(),
+    typeorm_1.CreateDateColumn(),
     __metadata("design:type", Date)
 ], File.prototype, "createdAt", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)(),
+    typeorm_1.UpdateDateColumn(),
     __metadata("design:type", Date)
 ], File.prototype, "updatedAt", void 0);
 File = __decorate([
-    (0, typeorm_1.Entity)()
+    typeorm_1.Entity()
 ], File);
 exports.File = File;

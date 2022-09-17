@@ -4,8 +4,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const path = require('path');
-const { v4: uuidv4 } = require('uuid');
 const router = express_1.default.Router();
 const controller = require('../controllers/dish.controller');
 // post
@@ -16,6 +14,7 @@ router.get('/:id', controller.getById);
 router.get('/getByType/:id', controller.getByType);
 router.get('/getByRestaurant/:id', controller.getByRestaurant);
 router.get('/getBySpeciality/:id', controller.getBySpeciality);
+router.post('/filter/', controller.filter);
 // export module
 // -----------------------------------------------------------------------------------------------------------------
 module.exports = router;

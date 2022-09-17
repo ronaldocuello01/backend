@@ -15,34 +15,34 @@ const Dish_1 = require("./Dish");
 let Speciality = class Speciality extends typeorm_1.BaseEntity {
 };
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
 ], Speciality.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Speciality.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Speciality.prototype, "description", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ default: 'A' }),
+    typeorm_1.Column({ default: 'A' }),
     __metadata("design:type", String)
 ], Speciality.prototype, "status", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)(),
+    typeorm_1.CreateDateColumn(),
     __metadata("design:type", Date)
 ], Speciality.prototype, "createdAt", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)(),
+    typeorm_1.UpdateDateColumn(),
     __metadata("design:type", Date)
 ], Speciality.prototype, "updatedAt", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => Dish_1.Dish, (dish) => dish.speciality),
+    typeorm_1.OneToMany(() => Dish_1.Dish, (dish) => dish.speciality),
     __metadata("design:type", Array)
 ], Speciality.prototype, "dishes", void 0);
 Speciality = __decorate([
-    (0, typeorm_1.Entity)()
+    typeorm_1.Entity()
 ], Speciality);
 exports.Speciality = Speciality;

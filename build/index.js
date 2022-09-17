@@ -32,8 +32,7 @@ app.use('/api/restaurants', require('./routes/restaurants.routes'));
 app.use('/api/dishtypes', require('./routes/dishtypes.routes'));
 app.use('/api/dishes', require('./routes/dishes.routes'));
 app.use('/api/files', require('./routes/files.routes'));
-// app.use('/api/filter', require('./routes/filter.routes'));
-// app.use('/files', express.static( path.join(__dirname, './files')));
+app.use('/files', express.static(path.join(__dirname, './files')));
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         yield db_1.appDataSource.initialize();
