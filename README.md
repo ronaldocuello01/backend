@@ -1,7 +1,7 @@
 # backend
 
 ## Introducción
-Este proyecto es usado como servidor en el sistema de busqueda de restaurtantes/platos (https://github.com/ronaldocuello01/frontend)
+Este proyecto es usado como servidor en el sistema de inventario (https://github.com/ronaldocuello01/inventory)
 
 ## Instalación
 - Para poder ejecutar el backend del proyecto es necesario instalar PostgreSql en el ordenador de prueba.
