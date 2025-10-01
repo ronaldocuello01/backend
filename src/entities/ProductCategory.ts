@@ -1,8 +1,9 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToMany, BaseEntity } from "typeorm";
-import { Dish } from "./Dish";
+
+import { Product } from "./Product";
 
 @Entity()
-export class Speciality extends BaseEntity {
+export class ProductCategory extends BaseEntity {
 
     @PrimaryGeneratedColumn()
     id: number
@@ -22,7 +23,7 @@ export class Speciality extends BaseEntity {
     @UpdateDateColumn()
     updatedAt: Date
 
-    @OneToMany(() => Dish, (dish) => dish.speciality )
-    dishes: Dish[]
+    @OneToMany(() => Product, (product) => product.productCategory )
+    products: Product[]
 
 }

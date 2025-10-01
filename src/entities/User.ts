@@ -1,27 +1,36 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, BaseEntity } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToMany, ManyToOne, BaseEntity } from "typeorm";
+
+import { Product } from "./Product";
+import { UserRole } from "./UserRole";
 
 @Entity()
 export class User extends BaseEntity {
 
     @PrimaryGeneratedColumn()
-    id: number
+    id: number;
 
     @Column()
-    name: string
+    name: string;
 
     @Column()
-    email: string
+    email: string;
 
     @Column()
-    password: string
+    password: string;
 
     @Column( {default: 'A'} )
-    status: string
+    status: string;
 
     @CreateDateColumn()
-    createdAt: Date
+    createdAt: Date;
 
     @UpdateDateColumn()
-    updatedAt: Date
+    updatedAt: Date;
+
+    @OneToMany(() => Product, (product) => product.user )
+    products: Product[];
+
+    @ManyToOne( () => UserRole, (userRole) => userRole.users )
+    userRole: UserRole
 
 }

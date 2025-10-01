@@ -1,8 +1,9 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToMany, BaseEntity } from "typeorm";
-import { Dish } from "./Dish";
+
+import { User } from "./User";
 
 @Entity()
-export class DishType extends BaseEntity {
+export class UserRole extends BaseEntity {
 
     @PrimaryGeneratedColumn()
     id: number
@@ -22,7 +23,7 @@ export class DishType extends BaseEntity {
     @UpdateDateColumn()
     updatedAt: Date
 
-    @OneToMany(() => Dish, (dish) => dish.dishType )
-    dishes: Dish[]
+    @OneToMany(() => User, (user) => user.userRole )
+    users: User[]
 
 }

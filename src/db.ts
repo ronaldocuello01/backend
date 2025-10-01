@@ -1,20 +1,16 @@
 import { DataSource } from "typeorm";
+import { UserRole } from "./entities/UserRole";
 import { User } from "./entities/User";
-import { Speciality } from "./entities/Speciality";
-import { File } from "./entities/File";
-import { Restaurant } from "./entities/Restaurant";
-import { View } from "./entities/View";
-import { DishType } from "./entities/DishType";
-import { Dish } from "./entities/Dish";
-import { Ingredient } from "./entities/Ingredient";
+import { ProductCategory } from "./entities/ProductCategory";
+import { Product } from "./entities/Product";
 
 export const appDataSource = new DataSource ({
     type: 'postgres',
     host: 'localhost',
-    username: 'postgres',
-    password: 'r12345*',
+    username: 'devuser',
+    password: 'devpass',
     port: 5432,
-    database: 'restaurants',
-    entities: [ User, File, Speciality, Restaurant, View, DishType, Dish, Ingredient ],
+    database: 'devdb',
+    entities: [ UserRole, User, ProductCategory, Product ],
     synchronize: true
 })
