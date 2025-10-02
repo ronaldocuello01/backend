@@ -127,7 +127,7 @@ class productController {
     async create(req, res) {
 
         const { name, description, price, stock, productCategory } = req.body;
-        if (name && price && stock && productCategory) {
+        if (name && price && productCategory) {
 
             try {
 
@@ -182,7 +182,7 @@ class productController {
         const { id } = req.params;
         const { name, description, price, stock, productCategory } = req.body;
 
-        if (name && price && stock && productCategory) {
+        if (name && price && productCategory) {
             try {
                 const product = await Product.findOneBy({ id: parseInt(id) });
 
